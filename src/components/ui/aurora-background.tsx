@@ -42,6 +42,20 @@ export const AuroraBackground = ({
               `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
           )}
         ></div>
+        
+        {/* Additional gradient beams for more visual impact */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-blue-500/0 via-blue-400/50 to-blue-500/0 animate-pulse"></div>
+          <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-purple-500/0 via-purple-400/50 to-purple-500/0 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-indigo-500/0 via-indigo-400/50 to-indigo-500/0 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        {/* Diagonal beams */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-blue-500/0 via-blue-400/40 to-blue-500/0 rotate-12 origin-left animate-pulse"></div>
+          <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-purple-500/0 via-purple-400/40 to-purple-500/0 -rotate-12 origin-left animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-indigo-500/0 via-indigo-400/40 to-indigo-500/0 rotate-6 origin-left animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        </div>
       </div>
       {children}
     </div>
