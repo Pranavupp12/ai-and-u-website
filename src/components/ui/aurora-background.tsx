@@ -43,26 +43,31 @@ export const AuroraBackground = ({
           )}
         ></div>
         
-        {/* Gradient beams with proper width and blur */}
-        <div className="absolute inset-0 opacity-60">
-          <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-blue-500/0 via-blue-400/80 to-blue-500/0 blur-sm animate-pulse"></div>
-          <div className="absolute top-0 left-1/2 w-1 h-full bg-gradient-to-b from-purple-500/0 via-purple-400/80 to-purple-500/0 blur-sm animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-0 left-3/4 w-1 h-full bg-gradient-to-b from-indigo-500/0 via-indigo-400/80 to-indigo-500/0 blur-sm animate-pulse" style={{ animationDelay: '2s' }}></div>
+        {/* Wide irregular gradient beams */}
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute top-0 left-[15%] w-24 h-full bg-gradient-to-b from-blue-500/0 via-blue-400/70 to-blue-500/0 blur-3xl animate-pulse transform -skew-x-12"></div>
+          <div className="absolute top-0 left-[45%] w-32 h-full bg-gradient-to-b from-purple-500/0 via-purple-400/60 to-purple-500/0 blur-3xl animate-pulse transform skew-x-6" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-[70%] w-20 h-full bg-gradient-to-b from-indigo-500/0 via-indigo-400/80 to-indigo-500/0 blur-2xl animate-pulse transform -skew-x-3" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-0 left-[85%] w-16 h-full bg-gradient-to-b from-cyan-500/0 via-cyan-400/70 to-cyan-500/0 blur-2xl animate-pulse transform skew-x-12" style={{ animationDelay: '0.5s' }}></div>
         </div>
         
-        {/* Wider beams with glow effect */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-0 left-1/6 w-8 h-full bg-gradient-to-b from-cyan-500/0 via-cyan-300/60 to-cyan-500/0 blur-xl animate-beam-pulse"></div>
-          <div className="absolute top-0 left-1/3 w-12 h-full bg-gradient-to-b from-blue-500/0 via-blue-300/50 to-blue-500/0 blur-2xl animate-beam-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-0 left-2/3 w-10 h-full bg-gradient-to-b from-purple-500/0 via-purple-300/60 to-purple-500/0 blur-xl animate-beam-pulse" style={{ animationDelay: '3s' }}></div>
-          <div className="absolute top-0 left-5/6 w-6 h-full bg-gradient-to-b from-indigo-500/0 via-indigo-300/70 to-indigo-500/0 blur-lg animate-beam-pulse" style={{ animationDelay: '0.5s' }}></div>
-        </div>
-        
-        {/* Diagonal beams with proper thickness */}
+        {/* Very wide organic beams with random positioning */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500/0 via-blue-400/60 to-blue-500/0 rotate-12 origin-left blur-sm animate-pulse"></div>
-          <div className="absolute top-1/3 left-0 w-full h-3 bg-gradient-to-r from-purple-500/0 via-purple-400/50 to-purple-500/0 -rotate-12 origin-left blur-md animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-2/3 left-0 w-full h-2 bg-gradient-to-r from-indigo-500/0 via-indigo-400/60 to-indigo-500/0 rotate-6 origin-left blur-sm animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-0 left-[8%] w-40 h-full bg-gradient-to-b from-violet-500/0 via-violet-300/50 via-blue-300/40 to-violet-500/0 blur-3xl animate-beam-pulse transform rotate-2"></div>
+          <div className="absolute top-0 left-[30%] w-56 h-full bg-gradient-to-b from-blue-500/0 via-cyan-300/40 via-blue-400/50 to-blue-500/0 blur-3xl animate-beam-pulse transform -rotate-1" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-0 left-[55%] w-28 h-full bg-gradient-to-b from-purple-500/0 via-pink-300/60 via-purple-400/45 to-purple-500/0 blur-3xl animate-beam-pulse transform rotate-3" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-0 left-[78%] w-36 h-full bg-gradient-to-b from-indigo-500/0 via-blue-300/50 via-indigo-400/55 to-indigo-500/0 blur-3xl animate-beam-pulse transform -rotate-2" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+        
+        {/* Diagonal and curved beams with organic shapes */}
+        <div className="absolute inset-0 opacity-25">
+          <div className="absolute top-[10%] left-0 w-full h-8 bg-gradient-to-r from-blue-500/0 via-blue-400/50 via-cyan-400/60 to-blue-500/0 rotate-[15deg] origin-left blur-xl animate-pulse transform scale-y-150"></div>
+          <div className="absolute top-[40%] left-0 w-full h-12 bg-gradient-to-r from-purple-500/0 via-purple-400/40 via-pink-400/50 to-purple-500/0 -rotate-[8deg] origin-left blur-2xl animate-pulse transform scale-y-200" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-[70%] left-0 w-full h-6 bg-gradient-to-r from-indigo-500/0 via-indigo-400/60 via-blue-400/45 to-indigo-500/0 rotate-[12deg] origin-left blur-xl animate-pulse transform scale-y-125" style={{ animationDelay: '1s' }}></div>
+          
+          {/* Curved beam effect using border-radius */}
+          <div className="absolute top-[25%] left-[20%] w-72 h-80 bg-gradient-radial from-blue-400/30 via-purple-400/20 to-transparent rounded-[50%] blur-3xl animate-beam-pulse transform rotate-45" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-[60%] left-[60%] w-96 h-64 bg-gradient-radial from-cyan-400/25 via-blue-400/15 to-transparent rounded-[60%] blur-3xl animate-beam-pulse transform -rotate-30" style={{ animationDelay: '4.5s' }}></div>
         </div>
       </div>
       {children}
