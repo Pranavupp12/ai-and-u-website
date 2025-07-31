@@ -23,18 +23,8 @@ export function Hero() {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-28">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Button variant="secondary" size="sm" className="gap-4">
-              Discover Our AI Solutions <MoveRight className="w-4 h-4" />
-            </Button>
-          </motion.div>
-          
           <motion.div 
             className="flex gap-4 flex-col"
             initial={{ opacity: 0, y: 30 }}
@@ -77,14 +67,11 @@ export function Hero() {
           </motion.div>
           
           <motion.div 
-            className="flex flex-row gap-3"
+            className="flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button size="lg" className="gap-4" variant="outline">
-              Schedule a Demo <PhoneCall className="w-4 h-4" />
-            </Button>
             <Button size="lg" className="gap-4">
               Get Started <MoveRight className="w-4 h-4" />
             </Button>

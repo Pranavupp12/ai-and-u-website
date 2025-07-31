@@ -92,6 +92,13 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.8s ease-out",
         "beam-pulse": "beam-pulse 3s ease-in-out infinite"
+      },
+       backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '12px',
+        lg: '16px',
+        xl: '24px',
       }
     }
   },

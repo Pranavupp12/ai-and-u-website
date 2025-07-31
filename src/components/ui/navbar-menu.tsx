@@ -42,7 +42,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-white/60 dark:bg-black/60 rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -66,7 +66,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6"
+      className="relative rounded-full bg-white/60  border border-black/[0.2] dark:border-white/[0.2] shadow-input flex justify-center space-x-4 px-8 py-6"
     >
       {children}
     </nav>
@@ -105,10 +105,10 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ 
-  children, 
+export const HoveredLink = ({
+  children,
   href,
-  ...rest 
+  ...rest
 }: {
   children: React.ReactNode;
   href: string;
