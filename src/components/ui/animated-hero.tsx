@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MoveRight, PhoneCall } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { AIChatInput } from "@/components/ui/ai-chat-input";
 
 export function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -67,14 +66,12 @@ export function Hero() {
           </motion.div>
           
           <motion.div 
-            className="flex justify-center"
+            className="flex justify-center w-full max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button size="lg" className="gap-4">
-              Get Started <MoveRight className="w-4 h-4" />
-            </Button>
+            <AIChatInput />
           </motion.div>
         </div>
       </div>
