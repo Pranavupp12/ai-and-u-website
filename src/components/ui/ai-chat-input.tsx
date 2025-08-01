@@ -14,6 +14,14 @@ const PLACEHOLDERS = [
   "Summarize this article",
 ];
 
+// Updated suggestion buttons - removed "More" and kept "Stories"
+const SUGGESTION_BUTTONS = [
+  "Lets get started", // Navigate to Features
+  "Meet Nora",        // Navigate to Cards
+  "associated brands", // Navigate to BrandsSection
+  "Stories",          // Navigate to AI story gallery
+];
+
 const AIChatInput = () => {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
@@ -21,6 +29,7 @@ const AIChatInput = () => {
   const [thinkActive, setThinkActive] = useState(false);
   const [deepSearchActive, setDeepSearchActive] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // Cycle placeholder text when input is inactive
@@ -54,6 +63,59 @@ const AIChatInput = () => {
   }, [inputValue]);
 
   const handleActivate = () => setIsActive(true);
+
+  // Handle send button click with updated navigation
+  const handleSendClick = () => {
+    if (!inputValue.trim() || isLoading) return;
+
+    setIsLoading(true);
+
+    // Navigate based on the input value to your specific components
+    setTimeout(() => {
+      navigateToComponent(inputValue);
+      setIsLoading(false);
+      setInputValue("");
+      setIsActive(false);
+    }, 300);
+  };
+
+  // Navigate to your specific components with updated mapping including Stories
+  const navigateToComponent = (input: string) => {
+    const componentMap: { [key: string]: string } = {
+      "associated brands": "brands-section",      // Navigate to <BrandsSection/>
+      "Lets get started": "features-section",     // Navigate to <Features/>
+      "Meet Nora": "cards-section",               // Navigate to <Cards/>
+      "Stories": "ai-stories-section",            // Navigate to <AIStoriesGallery/>
+    };
+
+    const targetSection = componentMap[input];
+    
+    if (targetSection) {
+      scrollToSection(targetSection);
+    } else {
+      // For custom queries, default to Features section
+      scrollToSection("features-section");
+    }
+  };
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
+  // Handle suggestion button click
+  const handleSuggestionClick = (suggestion: string) => {
+    setInputValue(suggestion);
+    setIsActive(true);
+  };
 
   const containerVariants = {
     collapsed: {
@@ -103,7 +165,7 @@ const AIChatInput = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center gap-4">
       <motion.div
         ref={wrapperRef}
         className="w-full max-w-3xl"
@@ -178,12 +240,20 @@ const AIChatInput = () => {
               <Mic size={20} className="text-muted-foreground" />
             </button>
             <button
-              className="flex items-center gap-1 bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-full font-medium justify-center"
+              className={`flex items-center gap-1 bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-full font-medium justify-center transition-all ${
+                isLoading ? 'opacity-75 cursor-not-allowed' : ''
+              }`}
               title="Send"
               type="button"
               tabIndex={-1}
+              onClick={handleSendClick}
+              disabled={isLoading}
             >
-              <Send size={18} />
+              {isLoading ? (
+                <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <Send size={18} />
+              )}
             </button>
           </div>
 
@@ -265,6 +335,41 @@ const AIChatInput = () => {
             </div>
           </motion.div>
         </div>
+      </motion.div>
+
+      {/* Suggestion Buttons */}
+      <motion.div
+        className="w-full max-w-3xl flex justify-center items-center gap-2 px-4 overflow-x-auto"
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: -10,
+            transition: { duration: 0.2 }
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.3, delay: 0.1 }
+          }
+        }}
+        initial="visible"
+        animate={isActive || inputValue ? "hidden" : "visible"}
+      >
+        {SUGGESTION_BUTTONS.map((suggestion, index) => (
+          <motion.button
+            key={suggestion}
+            className="px-4 py-2 rounded-full bg-muted text-muted-foreground hover:text-foreground transition-colors duration-150 text-sm font-medium border border-border/50 whitespace-nowrap flex-shrink-0"
+            onClick={() => handleSuggestionClick(suggestion)}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { delay: index * 0.05 }
+            }}
+          >
+            {suggestion}
+          </motion.button>
+        ))}
       </motion.div>
     </div>
   );

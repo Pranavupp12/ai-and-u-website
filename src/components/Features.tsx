@@ -2,6 +2,7 @@ import { Cpu, Lock, Sparkles, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Badge } from "@/components/ui/badge";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,7 @@ export function Features() {
   useEffect(() => {
     if (sectionRef.current) {
       // Animate the main section
-      gsap.fromTo(sectionRef.current, 
+      gsap.fromTo(sectionRef.current,
         { opacity: 0, y: 50 },
         {
           opacity: 1,
@@ -54,12 +55,18 @@ export function Features() {
     <section ref={sectionRef} className="overflow-hidden py-16 md:py-32">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <div className="relative z-10 max-w-2xl">
+            <div className="flex items-center gap-3 mb-2">
+                <Badge variant="secondary" className="text-xs font-medium">
+                  Lets Get Started
+                </Badge>
+              </div>
           <h2 className="text-4xl font-semibold lg:text-5xl">
-            Built for Scaling teams
+            Built for Solutions
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Empower your team with workflows that adapt to your needs,
-            whether you prefer git synchronization or an AI Agents interface.
+            Transform your workflow with intelligent AI agents that understand your needs,
+            From automated research to smart search capabilities, we deliver AI solutions
+            that scale with your business.
           </p>
         </div>
 
@@ -74,25 +81,12 @@ export function Features() {
               <div className="absolute -inset-[4.25rem] z-1 from-transparent to-75% bg-gradient-radial"></div>
 
               <img
-                src="https://tailark.com/_next/image?url=%2Fmail-upper.png&w=3840&q=75"
-                alt="Payments illustration"
-                className="absolute inset-0 z-10"
+                src="/images/ai-search-interface.png"
+                alt="AI Search Interface"
+                className="absolute inset-0 z-10 w-full h-full object-cover rounded-4xl"
                 width={2797}
                 height={1137}
-              />
-              <img
-                src="https://tailark.com/_next/image?url=%2Fmail-back.png&w=3840&q=75"
-                alt="Payments illustration dark mode"
-                className="hidden dark:block absolute inset-0 z-10"
-                width={2797}
-                height={1137}
-              />
-              <img
-                src="https://tailark.com/_next/image?url=%2Fmail-back-light.png&w=3840&q=75"
-                alt="Payments illustration light mode"
-                className="dark:hidden absolute inset-0 z-10"
-                width={2797}
-                height={1137}
+                loading="lazy"
               />
             </div>
           </div>
@@ -103,10 +97,11 @@ export function Features() {
           <div className="feature-item space-y-3">
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-primary" />
-              <h3 className="text-sm font-medium">Faaast</h3>
+              <h3 className="text-sm font-medium">Lightning Fast</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an entire helping developers and innovate.
+              Get instant AI-powered responses and solutions in milliseconds,
+              not minutes.
             </p>
           </div>
 
@@ -114,10 +109,11 @@ export function Features() {
           <div className="feature-item space-y-3">
             <div className="flex items-center gap-2">
               <Cpu className="w-5 h-5 text-primary" />
-              <h3 className="text-sm font-medium">Powerful</h3>
+              <h3 className="text-sm font-medium">Powerful AI</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an entire helping developers and businesses.
+              Powered by cutting-edge machine learning models that learn
+              and adapt to your specific needs.
             </p>
           </div>
 
@@ -125,10 +121,11 @@ export function Features() {
           <div className="feature-item space-y-3">
             <div className="flex items-center gap-2">
               <Lock className="w-5 h-5 text-primary" />
-              <h3 className="text-sm font-medium">Security</h3>
+              <h3 className="text-sm font-medium">Enterprise Security</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an helping developers businesses innovate.
+              Bank-level encryption and privacy protection for all your
+              AI interactions and data.
             </p>
           </div>
 
@@ -136,10 +133,11 @@ export function Features() {
           <div className="feature-item space-y-3">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-primary" />
-              <h3 className="text-sm font-medium">AI Powered</h3>
+              <h3 className="text-sm font-medium">Smart Automation</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an helping developers businesses innovate.
+              Intelligent workflows that handle complex tasks while you
+              focus on what matters most.
             </p>
           </div>
         </div>

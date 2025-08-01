@@ -22,7 +22,7 @@ export function Hero() {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto mt-28">
+      <div className="container mx-auto lg:mt-20">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <motion.div 
             className="flex gap-4 flex-col"
@@ -60,7 +60,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Transform your business with AI agents tailored to your exact needs. 
+              Transform your business with AI&U's AI agents tailored to your exact needs. 
               From customer support to complex workflows, we build AI that works the way you do.
             </p>
           </motion.div>
