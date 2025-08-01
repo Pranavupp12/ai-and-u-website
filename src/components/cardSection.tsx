@@ -13,6 +13,7 @@ export function Cards() {
 
   useEffect(() => {
     if (sectionRef.current) {
+      // Animate the main section
       gsap.fromTo(sectionRef.current, 
         { opacity: 0, y: 50 },
         {
@@ -28,6 +29,27 @@ export function Cards() {
           }
         }
       );
+
+      // Animate card items with staggered delays
+      const cardItems = sectionRef.current.querySelectorAll('.card-item');
+      cardItems.forEach((item, index) => {
+        gsap.fromTo(item,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: index * 0.3,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
     }
   }, []);
 
@@ -47,7 +69,7 @@ export function Cards() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Large card - left side */}
-            <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
+            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
               <User className="w-8 h-8 stroke-1" />
               <div className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
@@ -57,7 +79,7 @@ export function Cards() {
               </div>
             </div>
             {/* Standard card */}
-            <div className="bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
+            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
               <User className="w-8 h-8 stroke-1" />
               <div className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Instant onboarding</h3>
@@ -67,7 +89,7 @@ export function Cards() {
               </div>
             </div>
             {/* Standard card */}
-            <div className="bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
+            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
               <User className="w-8 h-8 stroke-1" />
               <div className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Automated insights</h3>
@@ -77,7 +99,7 @@ export function Cards() {
               </div>
             </div>
             {/* Large card - right side */}
-            <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
+            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
               <User className="w-8 h-8 stroke-1" />
               <div className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Unified dashboard</h3>
