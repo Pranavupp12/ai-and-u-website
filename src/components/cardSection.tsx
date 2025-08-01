@@ -2,10 +2,37 @@
 
 import { User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Cards() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      gsap.fromTo(sectionRef.current, 
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+  }, []);
+
   return (
-    <div className="w-full py-16 md:py-32">
+    <div ref={sectionRef} className="w-full py-16 md:py-32">
       <div className="container mx-auto max-w-5xl px-6">
         <div className="flex flex-col gap-10">
           <div className="flex gap-4 flex-col items-start">

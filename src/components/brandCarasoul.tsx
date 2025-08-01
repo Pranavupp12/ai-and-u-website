@@ -1,9 +1,13 @@
 "use client";
 
 // 1. Import React and needed libraries
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
 import { GradientHeading } from "@/components/ui/gradient-heading";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // 2. Import React Icon SVGs for top tech & AI companies
 import {
@@ -50,8 +54,30 @@ const allLogos = [
 
 // 4. Main Brands Section
 export function BrandsSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      gsap.fromTo(sectionRef.current, 
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+  }, []);
+
   return (
-    <section className="space-y-8 py-20 md:py-32">
+    <section ref={sectionRef} className="space-y-8 py-20 md:py-32">
       <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
         <div className="text-center">
           <GradientHeading variant="secondary">
