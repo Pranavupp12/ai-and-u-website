@@ -71,26 +71,28 @@ export function Features() {
         </div>
 
         <div className="relative -mx-4 rounded-3xl p-3 md:-mx-12">
-          <div style={{ perspective: "800px" }}>
-            <div
-              style={{
-                transform: "skewY(-2deg) skewX(-2deg) rotateX(6deg)",
-              }}
-              className="relative aspect-[88/36]"
-            >
-              <div className="absolute -inset-[4.25rem] z-1 from-transparent to-75% bg-gradient-radial"></div>
+  <div style={{ perspective: "800px" }}>
+    <div
+      style={{
+        transform: "skewY(-2deg) skewX(-2deg) rotateX(6deg)",
+        clipPath: "inset(0 round 2rem)", // equivalent to rounded-4xl
+      }}
+      className="relative aspect-[88/36]"
+    >
+      <div className="absolute -inset-[4.25rem] z-1 from-transparent to-75% bg-gradient-radial"></div>
 
-              <img
-                src="/images/ai-search-interface.png"
-                alt="AI Search Interface"
-                className="absolute inset-0 z-10 w-full h-full object-cover rounded-4xl"
-                width={2797}
-                height={1137}
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+      <img
+        src="/images/ai-search-interface.png"
+        alt="AI Search Interface"
+        className="absolute inset-0 z-10 w-full h-full object-cover"
+        width={2797}
+        height={1137}
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
 
         <div className="relative mx-auto grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-8 lg:grid-cols-4">
           {/* Feature item 1 */}

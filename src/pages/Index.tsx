@@ -3,7 +3,9 @@ import { Hero } from "@/components/ui/animated-hero";
 import { Features } from "@/components/Features";
 import { BrandsSection } from "@/components/brandCarasoul";
 import { Cards } from "@/components/cardSection";
-import { AIStoriesGallery } from "@/components/StoryGallery";
+import { ModelPerformanceMetrics } from "@/components/ModelMetrics";
+import { AIUFooter } from "@/components/AiuFooter";
+
 
 const Index = () => {
   return (
@@ -24,15 +26,18 @@ const Index = () => {
         <Cards />
       </section>
 
-        {/* Stories Component - ADD THIS ID */}
-      <section id="ai-stories-section">
-        <AIStoriesGallery />
+       {/* Cards Component - ADD THIS ID */}
+      <section id="performance-section">
+        <ModelPerformanceMetrics/>
       </section>
 
       {/* BrandsSection Component - ADD THIS ID */}
       <section id="brands-section">
         <BrandsSection />
       </section>
+
+     <AIUFooter/>
+
     </AuroraBackground>
   );
 };

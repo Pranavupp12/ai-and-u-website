@@ -75,19 +75,24 @@ export function Cards() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Large card - Contextual Understanding */}
-            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden">
-              <img 
-                src="/images/card-img-one.webp" 
-                alt="Contextual AI Understanding"
-                className="absolute inset-0 w-full h-full object-cover opacity-10"
-                loading="lazy"
+            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden transition-all duration-200 hover:shadow-lg border-transparent">
+              {/* Background Image with increased visibility */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                style={{
+                  backgroundImage: `url(/images/card-img-one.webp)`
+                }}
               />
+              
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/60" />
+              
               <div className="relative z-10">
-                <Brain className="w-8 h-8 stroke-1 text-primary" />
+                <Brain className="w-8 h-8 stroke-1 text-primary drop-shadow-sm" />
               </div>
               <div className="flex flex-col relative z-10">
-                <h3 className="text-xl tracking-tight">Contextual Intelligence</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
+                <h3 className="text-xl tracking-tight drop-shadow-sm">Contextual Intelligence</h3>
+                <p className="text-muted-foreground max-w-xs text-base drop-shadow-sm">
                   Nora remembers your conversations and understands your business context, 
                   unlike ChatGPT's isolated responses.
                 </p>
@@ -95,57 +100,72 @@ export function Cards() {
             </div>
 
             {/* Standard card - Real-time Learning */}
-            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col relative overflow-hidden">
-              <img 
-                src="/images/card-img-two.webp" 
-                alt="Real-time Learning"
-                className="absolute inset-0 w-full h-full object-cover opacity-10"
-                loading="lazy"
+            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col relative overflow-hidden transition-all duration-200 hover:shadow-lg border-transparent">
+              {/* Background Image with increased visibility */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                style={{
+                  backgroundImage: `url(/images/card-img-two.webp)`
+                }}
               />
+              
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/60" />
+              
               <div className="relative z-10">
-                <Zap className="w-8 h-8 stroke-1 text-primary" />
+                <Zap className="w-8 h-8 stroke-1 text-primary drop-shadow-sm" />
               </div>
               <div className="flex flex-col relative z-10">
-                <h3 className="text-xl tracking-tight">Real-time Adaptation</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
+                <h3 className="text-xl tracking-tight drop-shadow-sm">Real-time Adaptation</h3>
+                <p className="text-muted-foreground max-w-xs text-base drop-shadow-sm">
                   Learns and improves from every interaction, getting smarter with your specific use case.
                 </p>
               </div>
             </div>
 
             {/* Standard card - Privacy First */}
-            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col relative overflow-hidden">
-              <img 
-                src="/images/card-img-three.webp" 
-                alt="Privacy Protection"
-                className="absolute inset-0 w-full h-full object-cover opacity-10"
-                loading="lazy"
+            <div className="card-item bg-muted rounded-md aspect-square p-6 flex justify-between flex-col relative overflow-hidden transition-all duration-200 hover:shadow-lg border-transparent">
+              {/* Background Image with increased visibility */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                style={{
+                  backgroundImage: `url(/images/card-img-three.webp)`
+                }}
               />
+              
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/60" />
+              
               <div className="relative z-10">
-                <Shield className="w-8 h-8 stroke-1 text-primary" />
+                <Shield className="w-8 h-8 stroke-1 text-primary drop-shadow-sm" />
               </div>
               <div className="flex flex-col relative z-10">
-                <h3 className="text-xl tracking-tight">Privacy by Design</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
+                <h3 className="text-xl tracking-tight drop-shadow-sm">Privacy by Design</h3>
+                <p className="text-muted-foreground max-w-xs text-base drop-shadow-sm">
                   Your data stays secure and private, with no training on your conversations.
                 </p>
               </div>
             </div>
 
             {/* Large card - Intelligent Workflows */}
-            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden">
-              <img 
-                src="/images/card-img-four.webp" 
-                alt="Intelligent Workflows"
-                className="absolute inset-0 w-full h-full object-cover opacity-10"
-                loading="lazy"
+            <div className="card-item bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden transition-all duration-200 hover:shadow-lg border-transparent">
+              {/* Background Image with increased visibility */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                style={{
+                  backgroundImage: `url(/images/card-img-four.webp)`
+                }}
               />
+              
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/60" />
+              
               <div className="relative z-10">
-                <Sparkles className="w-8 h-8 stroke-1 text-primary" />
+                <Sparkles className="w-8 h-8 stroke-1 text-primary drop-shadow-sm" />
               </div>
               <div className="flex flex-col relative z-10">
-                <h3 className="text-xl tracking-tight">Intelligent Workflows</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
+                <h3 className="text-xl tracking-tight drop-shadow-sm">Intelligent Workflows</h3>
+                <p className="text-muted-foreground max-w-xs text-base drop-shadow-sm">
                   Automates complex multi-step processes that would require multiple prompts 
                   in other AI systems.
                 </p>

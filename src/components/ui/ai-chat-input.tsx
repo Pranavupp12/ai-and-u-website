@@ -6,20 +6,20 @@ import { Lightbulb, Mic, Globe, Paperclip, Send } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 const PLACEHOLDERS = [
-  "Generate website with HextaUI",
-  "Create a new project with Next.js",
-  "What is the meaning of life?",
-  "What is the best way to learn React?",
-  "How to cook a delicious meal?",
-  "Summarize this article",
+  "Use this search input for navigating website",
+  "Click on any pill button below",
+  "Then click on the arrow button",
+  "You will be navigated to that section",
+  "You can also scroll through the website",
+  "Enjoy surfing",
 ];
 
 // Updated suggestion buttons - removed "More" and kept "Stories"
 const SUGGESTION_BUTTONS = [
   "Lets get started", // Navigate to Features
   "Meet Nora",        // Navigate to Cards
+  "Performance",          // Navigate to performance metrics
   "associated brands", // Navigate to BrandsSection
-  "Stories",          // Navigate to AI story gallery
 ];
 
 const AIChatInput = () => {
@@ -85,7 +85,7 @@ const AIChatInput = () => {
       "associated brands": "brands-section",      // Navigate to <BrandsSection/>
       "Lets get started": "features-section",     // Navigate to <Features/>
       "Meet Nora": "cards-section",               // Navigate to <Cards/>
-      "Stories": "ai-stories-section",            // Navigate to <AIStoriesGallery/>
+      "Performance": "performance-section",            // Navigate to <AIStoriesGallery/>
     };
 
     const targetSection = componentMap[input];

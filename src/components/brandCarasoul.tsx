@@ -16,7 +16,6 @@ import {
   SiAmazon,
   SiFacebook,
   SiGithub,
-  SiNvidia,
   SiOpenai,
   SiAnthropic,
   SiHuggingface,
@@ -80,12 +79,9 @@ export function BrandsSection() {
     <section ref={sectionRef} className="space-y-8 py-20 md:py-32">
       <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
         <div className="text-center">
-          <GradientHeading variant="secondary">
-            The best are already here
-          </GradientHeading>
             <GradientHeading size="xxl">Join AI&U</GradientHeading>
         </div>
-        <LogoCarousel columnCount={3} logos={allLogos} />
+        <LogoCarousel columnCount={5} logos={allLogos} />
       </div>
     </section>
   );
