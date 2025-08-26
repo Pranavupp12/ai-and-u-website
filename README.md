@@ -4,7 +4,7 @@ This is the repository for the AI & You website, a modern and interactive web ap
 
 ## 🚀 About the Project
 
-This project is a showcase website for an AI agent named Nora. The website is designed to be visually appealing and engaging, with a focus on smooth animations and a clean user interface. It highlights the features, performance, and brand associations of the AI agent.
+This project is a showcase website for an AI agent named Nora. The website is designed to be visually appealing and engaging, with a focus on smooth animations and a clean user interface. It highlights the features, performance, and brand associations of the AI agent.Live Preview - https://aiandyouwebsite.vercel.app/
 
 ### ✨ Key Features:
 
